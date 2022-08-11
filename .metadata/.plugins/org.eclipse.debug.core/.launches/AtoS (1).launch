@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.m2m.atl.adt.launching.atlTransformation">
+    <stringAttribute key="ATL File Name" value="/TP/Transformation/AtoS.atl"/>
+    <stringAttribute key="ATL VM" value="EMF-specific VM"/>
+    <booleanAttribute key="IS_REFINING" value="false"/>
+    <mapAttribute key="Input">
+        <mapEntry key="IN" value="MMActivity"/>
+    </mapAttribute>
+    <mapAttribute key="Libs"/>
+    <mapAttribute key="Output">
+        <mapEntry key="OUT" value="MMstatemachine"/>
+    </mapAttribute>
+    <mapAttribute key="Path"/>
+</launchConfiguration>

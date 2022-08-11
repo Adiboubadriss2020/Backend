@@ -1,0 +1,63 @@
+package adib;
+
+import java.io.IOException;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+
+@WebServlet("/Second")
+public class Second extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+      
+    public Second() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+		String url = "/Jsp2.jsp";
+		String fname = request.getParameter("fname");
+		String lname = request.getParameter("lname");
+		String phone = request.getParameter("phone");
+		UpdateDB(fname, lname, phone);
+		Customer cus = new Customer(fname, lname, phone);
+		request.setAttribute("cus", cus);
+		getServletContext().getRequestDispatcher(url).forward(request, response);
+	}
+
+	protected void UpdateDB(String fname,String lname,String phone) {
+		Connection con;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			String url = "jdbc:mysql://localhost/test";
+			String user = "root";
+			String psswd = "";
+			con = (Connection) DriverManager.getConnection(url,user,psswd);
+			Statement s = (Statement) con.createStatement();
+			String query = "INSERT INTO CUSTOMER " + 
+			        "(first_name, last_name, phone, cust_id) " + 
+			        "VALUES ('" + fname + "', '" + lname + "', '" +
+			        phone + "', NULL)";
+			s.executeUpdate(query);
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+}

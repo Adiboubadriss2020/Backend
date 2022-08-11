@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.fellah.api.service.Alimentaion&apos; to &apos;AlimentaionImpService&apos;&#x0D;&#x0A;- Original project: &apos;Fellah_back-main&apos;&#x0D;&#x0A;- Original element: &apos;com.fellah.api.service.Alimentaion&apos;&#x0D;&#x0A;- Renamed element: &apos;com.fellah.api.service.AlimentaionImpService&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Alimentaion&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.fellah.api.service{Alimentaion.java[Alimentaion" matchStrategy="1" name="AlimentaionImpService" qualified="false" references="true" similarDeclarations="false" stamp="1659268170347" textual="false" version="1.0"/>
+</session>

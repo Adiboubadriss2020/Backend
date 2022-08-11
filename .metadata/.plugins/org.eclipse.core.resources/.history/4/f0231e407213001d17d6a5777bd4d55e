@@ -1,0 +1,45 @@
+package com.fellah.api.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.fellah.api.model.Objectif;
+import com.fellah.api.repository.ClientRepository;
+import com.fellah.api.repository.ObjectifRepository;
+
+public class ObjectifImpService implements ObjectifService {
+	  
+	   @Autowired
+	    private ObjectifRepository obj;
+	@Override
+	public Objectif saveObjectif(Objectif objectif) {
+		
+		return obj.save(objectif);
+	}
+
+	@Override
+	public List<Objectif> getAllObjectifs() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Objectif findkarim() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Objectif update(Long id, Objectif objectif) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

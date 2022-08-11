@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;Meta&apos; to &apos;T1&apos;" description="Move &apos;Meta&apos; to &apos;T1&apos;" destination="/T1" element1="/Square2Circle/MetaM/Meta" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1633469839886" updateReferences="true"/>
+</session>

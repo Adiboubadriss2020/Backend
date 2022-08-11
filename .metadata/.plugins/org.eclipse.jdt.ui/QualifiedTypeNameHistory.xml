@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
+    <fullyQualifiedTypeName name="java.sql.SQLException"/>
+    <fullyQualifiedTypeName name="com.fellah.api.service.ObjectifService"/>
+    <fullyQualifiedTypeName name="com.fellah.api.model.Objectif"/>
+    <fullyQualifiedTypeName name="org.hibernate.query.criteria.internal.expression.function.CurrentDateFunction"/>
+    <fullyQualifiedTypeName name="org.springframework.data.auditing.CurrentDateTimeProvider"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
+    <fullyQualifiedTypeName name="org.springframework.data.repository.query.Param"/>
+    <fullyQualifiedTypeName name="java.sql.Date"/>
+    <fullyQualifiedTypeName name="com.fellah.api.repository.VeterinaireRepository"/>
+    <fullyQualifiedTypeName name="com.fellah.api.service.VeterinaireService"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.ManyToAny"/>
+    <fullyQualifiedTypeName name="javax.persistence.ManyToOne"/>
+    <fullyQualifiedTypeName name="java.sql.SQLIntegrityConstraintViolationException"/>
+    <fullyQualifiedTypeName name="com.fellah.api.model.Alimentation_animal"/>
+    <fullyQualifiedTypeName name="com.fellah.api.model.Animal"/>
+    <fullyQualifiedTypeName name="java.lang.NullPointerException"/>
+    <fullyQualifiedTypeName name="com.fellah.api.model.Alimentation"/>
+    <fullyQualifiedTypeName name="javax.persistence.FetchType"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.fellah.api.model.Veterinaire"/>
+</qualifiedTypeNameHistroy>

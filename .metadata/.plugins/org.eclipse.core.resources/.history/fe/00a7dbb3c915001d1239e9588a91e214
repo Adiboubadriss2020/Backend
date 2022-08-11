@@ -1,0 +1,27 @@
+package com.fellah.api.repository;
+
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
+
+import com.fellah.api.model.Charge;
+
+public interface ChargeRepository extends JpaRepository<Charge,Long> {
+
+	
+    @Query(value="select c.date, c.charge_animal from Charge c where c.date >= ?1 GROUP BY c.date",
+    		nativeQuery = true)
+    List<String> findAllWithDateAfter(LocalDate threeDaysAgoDate);
+	
+	
+	@Query(
+			value = "SELECT * FROM charge c"
+					+ " WHERE c.date >= DATEADD(day,-7, GETDATE())", 
+			nativeQuery = true)
+			List<Charge> SumCharge();
+}
+
