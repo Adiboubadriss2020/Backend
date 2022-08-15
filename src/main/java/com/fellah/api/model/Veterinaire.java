@@ -24,9 +24,13 @@ public class Veterinaire {
 	private Long id;
 	@Column(unique=true)
 	private String nom;
+	@Column(name = "telephone")
 	private int telephone;
+	@Column(name = "transaction")
 	private long transaction;
+	@Column(name = "date")
 	private Date date;
+	
 	
 	public Veterinaire() {
 		super();

@@ -3,6 +3,7 @@ package com.fellah.api.model;
 import java.sql.Date;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,8 +19,11 @@ public class Medicament {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(name = "nom_medicament")
 	private String nom_medicament;
+	@Column(name = "date_prise")
 	private Date date_prise;
+	@Column(name = "prix_medicament")
 	private Long prix_medicament;
 	@OneToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "bovin_id",nullable = false)

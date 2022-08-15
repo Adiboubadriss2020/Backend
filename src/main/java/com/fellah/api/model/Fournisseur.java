@@ -2,6 +2,7 @@ package com.fellah.api.model;
 
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,11 +13,17 @@ import javax.persistence.Table;
 public class Fournisseur {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+	@Column(name = "id")
+	private Long id;
+	@Column(name = "nom")
 	private String nom;
+	@Column(name = "email")
 	private String email;
+	@Column(name = "adresse")
 	private String adresse;
+	@Column(name = "transaction")
 	private long transaction;
+	@Column(name = "date")
 	private Date date;
 	
 	public Fournisseur(Long id, String nom, String email, String adresse,long transactionn,Date date) {

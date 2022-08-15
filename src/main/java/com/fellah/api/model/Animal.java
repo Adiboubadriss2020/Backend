@@ -25,13 +25,21 @@ public class Animal {
 	private Long id;
 	@Column(unique=true)
 	private Long ref;
+	@Column(name = "origine")
 	private String origine;
+	@Column(name = "prix_achat")
 	private Long prix_achat;
+	@Column(name = "poid_achat")
 	private Long poid_achat;
+	@Column(name = "date_achat")
 	private Date date_achat;
+	@Column(name = "poid_vente")
 	private Long poid_vente;
+	@Column(name = "date_vente")
 	private Date date_vente;
+	@Column(name = "etat")
 	private String etat;
+	@Column(name = "infos")
 	private String infos;
 
 	public Animal() {

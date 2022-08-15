@@ -3,6 +3,7 @@ package com.fellah.api.model;
 import java.sql.Date;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,8 +18,11 @@ import org.hibernate.annotations.ManyToAny;
 public class Visite {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
+	@Column(name = "date_visite")
 	private Date date_visite;
+	@Column(name = "prix_visite")
 	private Long prix_visite;
 	@ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "bovin_id",nullable = true)
