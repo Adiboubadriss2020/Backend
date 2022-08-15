@@ -17,5 +17,5 @@ public interface AlimentationAnimalService  {
     public Alimentation_animal update(Long id, Alimentation_animal a);
     public void delete(Long id);
     public void updatequantity(String type,Long id,String quantite_animal);
-    
+    List<Object> controllqnt(Long d);
 }

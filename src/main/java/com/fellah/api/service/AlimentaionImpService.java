@@ -1,5 +1,6 @@
 package com.fellah.api.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,6 +67,15 @@ public class AlimentaionImpService implements AlimentationService {
 	public void updatequantity(Long qnt,Long id) {
 		
 		al.updatequantity(qnt, id);
+	}
+
+	@Override
+	public List<Object> getLastSevenDays(int d) {
+	   	LocalDate today=LocalDate.now();
+
+		 LocalDate sevenDaysAgoDate = LocalDate.now().minusDays(d);
+	        return this.al.sevendays(sevenDaysAgoDate,today);
+
 	}
 
 

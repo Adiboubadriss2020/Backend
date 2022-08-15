@@ -18,5 +18,6 @@ public interface VisiteService  {
     public Visite update(Long id, Visite a);
     public void delete(Long id);
     public void updatequantity(String type,Long id,String quantite_animal);
-    
+	List<Object> getLastSevenDays(int d);
+
 }

@@ -18,6 +18,7 @@ public class Fournisseur {
 	private String adresse;
 	private long transaction;
 	private Date date;
+	
 	public Fournisseur(Long id, String nom, String email, String adresse,long transactionn,Date date) {
 		super();
 		this.id = id;

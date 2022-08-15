@@ -27,6 +27,7 @@ public class Veterinaire {
 	private int telephone;
 	private long transaction;
 	private Date date;
+	
 	public Veterinaire() {
 		super();
 		// TODO Auto-generated constructor stub

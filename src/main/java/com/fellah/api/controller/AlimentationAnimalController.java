@@ -36,7 +36,11 @@ public class AlimentationAnimalController {
 	    public List<Alimentation_animal> list(){
 	        return alimentationService.getAllAlimentationanimal();
 	    }
-
+	    @GetMapping("/alimentations/days/{d}")
+	    public List<Object> Seven(@PathVariable(value = "d") long d)
+	    {    
+	    	return alimentationService.controllqnt(d);   
+	    }
 	    @DeleteMapping("/delete/{id}")
 		public String deleted(@PathVariable(value = "id") Long id) {
 			alimentationService.delete(id);

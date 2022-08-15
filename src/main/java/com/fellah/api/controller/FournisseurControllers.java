@@ -7,9 +7,17 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.fellah.api.model.Fournisseur;
-import com.fellah.api.repository.FournisseurRepository;
+import com.fellah.api.service.AlimentationService;
+import com.fellah.api.service.AnimalService;
+import com.fellah.api.service.ChargeService;
+import com.fellah.api.service.ClientService;
+import com.fellah.api.service.EmployeeService;
 import com.fellah.api.service.FournisseurService;
+import com.fellah.api.service.VeterinaireService;
+import com.fellah.api.service.VisiteService;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,22 +29,29 @@ public class FournisseurControllers {
 	
 	    @Autowired
 	    private FournisseurService fournisseurService;
-	    private FournisseurRepository fournisseurRepository;
+	    @Autowired
+	    private ChargeService chargeService;
+	    
 
 	    @PostMapping("/add")
 	    public String add(@RequestBody Fournisseur fournisseur){
-	        fournisseurService.saveFournisseur(fournisseur);
+	    	LocalDate today = LocalDate.now();
+	    	fournisseurService.saveFournisseur(fournisseur);
+	    	chargeService.SaveCharge(today, null, null, null, null, fournisseur, null,null);
+	        
 	        return "New fournisseur is added";
 	    }
 	    @GetMapping("/days/{d}")
-	    public List<Object> Seven(@PathVariable(value = "d") int d){
-	    	return  fournisseurService.getLastSevenDays(d);
+	    public List<Object> Seven(@PathVariable(value = "d") int d)
+	    {    
+	    	return fournisseurService.getLastSevenDays(d);   
 	    }
 	    
 	    
 	    @GetMapping("/allF")
-	    public Long AllF(){
-	        return fournisseurService.allF();
+	    public List<Object> AllF(){
+	    	
+	        return	chargeService.getfilter(7);
 	    }
 	    
 	    @GetMapping("/getAll")

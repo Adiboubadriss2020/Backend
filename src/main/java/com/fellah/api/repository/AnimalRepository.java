@@ -1,5 +1,6 @@
 package com.fellah.api.repository;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -59,6 +60,10 @@ public interface AnimalRepository extends JpaRepository<Animal, Long>{
 			value = "UPDATE animal a SET a.infos = '' WHERE a.id= :id", 
 			nativeQuery = true)
 			void updateinfos(@Param("id")Long id);
+	
+	 @Query(value="select a.date_achat,sum(a.prix_achat) from Animal a where a.date_achat between ?1 and ?2  group by a.date_achat order by a.date_achat ",
+	    		nativeQuery = true)	    	 
+	List<Object> sevendays(LocalDate sevenDaysAgoDate, LocalDate today);
 }
 
 

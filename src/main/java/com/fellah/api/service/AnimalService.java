@@ -22,5 +22,6 @@ public interface AnimalService {
 	public void updateinfos(Long id);
 	public Animal days();
 	public Animal check(Long ref);
+	List<Object> getLastSevenDays(int d);
 
 }

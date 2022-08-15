@@ -1,5 +1,6 @@
 package com.fellah.api.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -64,6 +65,16 @@ public class AlimentaionAnimalImpService implements AlimentationAnimalService {
 	public void updatequantity(String type, Long id, String quantite_animal) {
 		/*al.updatequantity(type, id, quantite_animal);*/
 		
+	}
+
+	@Override
+	public List<Object> controllqnt(Long d) {
+		LocalDate today=LocalDate.now();
+
+		 LocalDate sevenDaysAgoDate = LocalDate.now().minusDays(d);
+	        return this.al.almentationquantite(sevenDaysAgoDate,today);
+
+	
 	}
 
 }

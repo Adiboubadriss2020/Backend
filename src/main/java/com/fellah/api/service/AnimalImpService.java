@@ -120,4 +120,10 @@ public class AnimalImpService implements AnimalService {
 		return ar.check(ref);
 	}
 
+	@Override
+	public List<Object> getLastSevenDays(int d) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

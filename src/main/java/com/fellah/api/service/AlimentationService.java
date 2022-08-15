@@ -17,6 +17,7 @@ public interface AlimentationService  {
     public void delete(Long id);
 	Alimentation check(Long ref);
 	public void updatequantity(Long qnt,Long id);
+	List<Object> getLastSevenDays(int d);
 
  //   public void updatequantity(String type,Long id,String quantite_animal);
     

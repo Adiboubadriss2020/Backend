@@ -1,16 +1,19 @@
 package com.fellah.api.model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -27,7 +30,7 @@ public class Alimentation {
 	private Date date_arrivage;
 	private Long quantite_arrivage;
 	private Long prix_arrivage;
-	
+
 	public Alimentation(Long id,Long ref, String type_alimentation, Date date_arrivage, Long quantite_arrivage,
 			Long prix_arrivage) {
 		super();
@@ -37,6 +40,7 @@ public class Alimentation {
 		this.date_arrivage = date_arrivage;
 		this.quantite_arrivage = quantite_arrivage;
 		this.prix_arrivage = prix_arrivage;
+		
 	}
 	public Alimentation() {
 		super();

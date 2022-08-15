@@ -1,5 +1,6 @@
 package com.fellah.api.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.transaction.Transactional;
@@ -68,4 +69,12 @@ public class VisiteImpService implements VisiteService {
 		
 	}
 
+	@Override
+	public List<Object> getLastSevenDays(int d) {
+	   	LocalDate today=LocalDate.now();
+
+		 LocalDate sevenDaysAgoDate = LocalDate.now().minusDays(d);
+	        return this.v.sevendays(sevenDaysAgoDate,today);
+
+	}
 }

@@ -22,10 +22,8 @@ public class Alimentation_animal {
 	@Column
 	private Date date_alimentation;
 	@Column
-	private int quantite;
-	@ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "bovin_id",nullable = true)
-    private Animal animal;
+	private Long quantite;
+
 	@ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "alimentation_id",nullable = true)
     private Alimentation alimentation;
@@ -34,12 +32,12 @@ public class Alimentation_animal {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Alimentation_animal(Long id, Date date_alimentation, int quantite,Animal animal,Alimentation alimentation) {
+	public Alimentation_animal(Long id, Date date_alimentation, Long quantite,Animal animal,Alimentation alimentation) {
 		super(); 
 		this.id = id;
 		this.date_alimentation = date_alimentation;
 		this.quantite = quantite;
-		this.animal=animal;
+
 		this.alimentation=alimentation;
 	}
 	public Long getId() {
@@ -54,18 +52,13 @@ public class Alimentation_animal {
 	public void setDate_alimentation(Date date_alimentation) {
 		this.date_alimentation = date_alimentation;
 	}
-	public int getQuantite() {
+	public Long getQuantite() {
 		return quantite;
 	}
-	public void setQuantite(int quantite) {
+	public void setQuantite(Long quantite) {
 		this.quantite = quantite;
 	}
-	public Animal getAnimal() {
-		return animal;
-	}
-	public void setAnimal(Animal animal) {
-		this.animal = animal;
-	}
+
 	public Alimentation getAlimentation() {
 		return alimentation;
 	}

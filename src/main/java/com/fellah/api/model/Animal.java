@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
@@ -32,7 +33,7 @@ public class Animal {
 	private Date date_vente;
 	private String etat;
 	private String infos;
-	
+
 	public Animal() {
 		super();
 		// TODO Auto-generated constructor stub
