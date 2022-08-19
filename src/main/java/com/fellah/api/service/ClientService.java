@@ -2,7 +2,6 @@ package com.fellah.api.service;
 
 import java.util.List;
 
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fellah.api.model.Client;
 

@@ -16,10 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fellah.api.model.Alimentation;
-import com.fellah.api.model.Client;
 import com.fellah.api.model.Veterinaire;
-import com.fellah.api.service.ClientService;
 import com.fellah.api.service.VeterinaireService;
 
 @RestController

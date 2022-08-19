@@ -7,9 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fellah.api.model.Client;
-import com.fellah.api.model.Employee;
 import com.fellah.api.repository.ClientRepository;
-import com.fellah.api.repository.FournisseurRepository;
 @Service
 public class ClientImpService implements ClientService {
 

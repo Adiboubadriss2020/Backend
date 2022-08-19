@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import com.fellah.api.model.Alimentation;
 import com.fellah.api.model.Animal;
-import com.fellah.api.model.Charge;
 import com.fellah.api.model.Client;
 import com.fellah.api.model.Employee;
 import com.fellah.api.model.Fournisseur;

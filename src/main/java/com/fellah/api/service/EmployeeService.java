@@ -2,7 +2,6 @@ package com.fellah.api.service;
 import java.util.List;
 
 import com.fellah.api.model.Employee;
-import com.fellah.api.model.Fournisseur;
 public interface EmployeeService {
 
 	public Employee saveEmp(Employee employee);

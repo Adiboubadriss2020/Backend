@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fellah.api.model.Employee;
-import com.fellah.api.model.Fournisseur;
 import com.fellah.api.service.EmployeeService;
-import com.fellah.api.service.FournisseurService;
 
 @RestController
 @RequestMapping("/employee")

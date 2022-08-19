@@ -3,10 +3,8 @@ package com.fellah.api.service;
 
 import java.util.List;
 
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
-import com.fellah.api.model.Alimentation;
 import com.fellah.api.model.Alimentation_animal;
 
 @Service

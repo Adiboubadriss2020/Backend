@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.fellah.api.model.Animal;
-import com.fellah.api.model.Fournisseur;
 
 @Service
 public interface AnimalService {

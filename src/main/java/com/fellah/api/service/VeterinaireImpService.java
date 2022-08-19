@@ -5,12 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.fellah.api.model.Client;
-import com.fellah.api.model.Employee;
 import com.fellah.api.model.Veterinaire;
-import com.fellah.api.repository.ClientRepository;
-import com.fellah.api.repository.FournisseurRepository;
 import com.fellah.api.repository.VeterinaireRepository;
 @Service
 public class VeterinaireImpService implements VeterinaireService {

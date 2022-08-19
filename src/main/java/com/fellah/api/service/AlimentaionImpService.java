@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fellah.api.model.Alimentation;
-import com.fellah.api.model.Animal;
 import com.fellah.api.repository.AlimentationRepository;
 @Service
 public class AlimentaionImpService implements AlimentationService {

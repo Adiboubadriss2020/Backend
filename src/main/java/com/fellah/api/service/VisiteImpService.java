@@ -8,12 +8,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fellah.api.model.Alimentation;
-import com.fellah.api.model.Alimentation_animal;
-import com.fellah.api.model.Animal;
 import com.fellah.api.model.Visite;
-import com.fellah.api.repository.AlimentationRepository;
-import com.fellah.api.repository.Alimentation_animalRepository;
+
 import com.fellah.api.repository.VisiteRepository;
 @Service
 public class VisiteImpService implements VisiteService {

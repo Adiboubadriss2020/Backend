@@ -26,7 +26,7 @@ public class Fournisseur {
 	@Column(name = "date")
 	private Date date;
 	
-	public Fournisseur(Long id, String nom, String email, String adresse,long transactionn,Date date) {
+	public Fournisseur(Long id, String nom, String email, String adresse,long transaction,Date date) {
 		super();
 		this.id = id;
 		this.nom = nom;

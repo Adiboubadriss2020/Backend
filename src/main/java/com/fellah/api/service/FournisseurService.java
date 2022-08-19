@@ -1,8 +1,5 @@
 package com.fellah.api.service;
 import java.util.List;
-import java.util.Optional;
-
-import com.fellah.api.model.Employee;
 import com.fellah.api.model.Fournisseur;
 public interface FournisseurService {
 	 public Fournisseur saveFournisseur(Fournisseur fournisseur);

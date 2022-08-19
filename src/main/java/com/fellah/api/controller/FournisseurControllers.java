@@ -7,19 +7,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.fellah.api.model.Fournisseur;
-import com.fellah.api.service.AlimentationService;
-import com.fellah.api.service.AnimalService;
 import com.fellah.api.service.ChargeService;
-import com.fellah.api.service.ClientService;
-import com.fellah.api.service.EmployeeService;
 import com.fellah.api.service.FournisseurService;
-import com.fellah.api.service.VeterinaireService;
-import com.fellah.api.service.VisiteService;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/fournisseur")
