@@ -35,12 +35,13 @@ public class Visite {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Visite(Long id, Date date_visite, Long prix_visite) {
+	public Visite(Long id, Date date_visite, Long prix_visite,Animal animal,Veterinaire veterinaire) {
 		super();
 		this.id = id;
 		this.date_visite = date_visite;
 		this.prix_visite = prix_visite;
-		
+		this.animal=animal;
+		this.veterinaire=veterinaire;
 	}
 	public Long getId() {
 		return id;

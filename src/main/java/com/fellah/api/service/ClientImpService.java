@@ -45,7 +45,9 @@ public class ClientImpService implements ClientService {
 	public Client update(Long id, Client client) {
 		 if (cr.findById(id).isPresent()){
 	            Client c = cr.findById(id).get();
-
+	            if(client.getNom()=="" || client.getPrenom()=="" || client.getAdresse()=="" || client.getTel()==0) {
+	            	return c;
+	            }
 	            c.setNom(client.getNom());
 	            c.setPrenom(client.getPrenom());
 	            c.setAdresse(client.getAdresse());

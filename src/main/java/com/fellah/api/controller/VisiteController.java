@@ -29,9 +29,9 @@ public class VisiteController {
 	    private Alimentation_animalRepository alimentationRepository;
 
 	    @PostMapping("/add")
-	    public String add(@RequestBody Visite visite){
+	    public Visite add(@RequestBody Visite visite){
 	    	VisiteService.saveVisite(visite);
-	        return "New visite is added";
+	        return visite;
 	    }
 
 	    @GetMapping("/getAll")

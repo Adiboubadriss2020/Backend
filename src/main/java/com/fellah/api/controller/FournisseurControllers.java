@@ -47,11 +47,10 @@ public class FournisseurControllers {
 	    	return fournisseurService.getLastSevenDays(d);   
 	    }
 	    
-	    
 	    @GetMapping("/allF")
-	    public List<Object> AllF(){
+	    public Long AllF(){
 	    	
-	        return	chargeService.getfilter(7);
+	        return	fournisseurService.allF();
 	    }
 	    
 	    @GetMapping("/getAll")

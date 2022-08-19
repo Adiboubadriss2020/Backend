@@ -50,7 +50,9 @@ public class FournisseurServiceImp implements FournisseurService {
 
         if (fr.findById(id).isPresent()){
             Fournisseur existingF = fr.findById(id).get();
-
+            if(f.getNom() ==""|| f.getTransaction()==0|| f.getEmail()=="" || f.getAdresse()=="") {
+            	return existingF  ;  
+       }
             existingF.setNom(f.getNom());
             existingF.setEmail(f.getEmail());
             existingF.setAdresse(f.getAdresse());

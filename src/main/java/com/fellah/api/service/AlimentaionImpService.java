@@ -36,7 +36,9 @@ public class AlimentaionImpService implements AlimentationService {
 	public Alimentation update(Long id, Alimentation a) {
 		if (al.findById(id).isPresent()){
             Alimentation alimentation = al.findById(id).get();
-
+            if(a.getQuantite_arrivage()==0|| a.getPrix_arrivage()==0 || a.getType_alimentation()=="") {
+            	return alimentation;
+            }
             alimentation.setDate_arrivage(a.getDate_arrivage());
             alimentation.setQuantite_arrivage(a.getQuantite_arrivage());
             alimentation.setPrix_arrivage(a.getPrix_arrivage());
