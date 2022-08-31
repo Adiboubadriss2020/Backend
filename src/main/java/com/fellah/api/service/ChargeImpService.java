@@ -3,11 +3,14 @@ package com.fellah.api.service;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fellah.api.model.Alimentation;
 import com.fellah.api.model.Animal;
+import com.fellah.api.model.Charge;
 import com.fellah.api.model.Client;
 import com.fellah.api.model.Employee;
 import com.fellah.api.model.Fournisseur;
@@ -18,10 +21,9 @@ import com.fellah.api.repository.ChargeRepository;
 public class ChargeImpService implements ChargeService {
 	 @Autowired
 	    private ChargeRepository ch;
-	@Override
-	public void SaveCharge(LocalDate today, Alimentation alimentation, Animal animal, Client client, Employee employee,
-			Fournisseur fournisseur, Veterinaire veterinaire, Visite visite) {
-		 ch.savecharge(today, alimentation, animal, client, employee, fournisseur, veterinaire, visite);
+	@Transactional
+	public Charge SaveCharge(Charge charge) {
+		 return ch.save(charge);
 		
 	}
 	@Override

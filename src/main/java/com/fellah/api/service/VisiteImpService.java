@@ -40,7 +40,6 @@ public class VisiteImpService implements VisiteService {
 			Visite visite = v.findById(id).get();
 
 			visite.setDate_visite(a.getDate_visite());
-			visite.setPrix_visite(a.getPrix_visite());
 			visite.setAnimal(a.getAnimal());
 			visite.setVeterinaire(a.getVeterinaire());
 

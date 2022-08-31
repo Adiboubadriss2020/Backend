@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fellah.api.model.Client;
+import com.fellah.api.model.Fournisseur;
 import com.fellah.api.service.ClientService;
 
 @RestController
@@ -48,11 +49,10 @@ public class ClientController {
     	return  clientService.getLastSevenDays(d);
     }
     
-   /* @GetMapping("/getnom")
-    public Fournisseur karim(){
-        return fournisseurService.findkarim();
-    }*/
-	// update employee rest api
+    @GetMapping("/find/{id}")
+    public Client karim(@PathVariable(value = "id")Long id){
+        return clientService.findkarim(id);
+    }
 	
     @PutMapping(value = "update/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Client> updateClient(@PathVariable(value = "id") Long id,

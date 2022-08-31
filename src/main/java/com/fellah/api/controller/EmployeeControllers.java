@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fellah.api.model.Employee;
+import com.fellah.api.model.Fournisseur;
 import com.fellah.api.service.EmployeeService;
 
 @RestController
@@ -33,7 +34,10 @@ public class EmployeeControllers {
 	        employeeService.saveEmp(employee);
 	        return "New Employee is added";
 	    }
-
+	 	@GetMapping("/find/{id}")
+	    public Employee karim(@PathVariable(value = "id")Long id){
+	        return employeeService.findkarim(id);
+	    }
 	 	@GetMapping("/allEmp")
 	    public Long Allemp(){
 	        return employeeService.allEmp();

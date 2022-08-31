@@ -32,6 +32,7 @@ public class AnimalImpService implements AnimalService {
             if(a.getOrigine()=="" || a.getPoid_achat()==0 || a.getPoid_vente()==0 || a.getPrix_achat()==0) {
             	return animal;
             }
+            System.out.println(a.getDate_achat());
             animal.setDate_achat(a.getDate_achat());
             animal.setDate_vente(a.getDate_vente());
             animal.setOrigine(a.getOrigine());

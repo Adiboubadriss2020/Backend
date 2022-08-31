@@ -1,13 +1,17 @@
 package com.fellah.api.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fellah.api.model.Account;
 import com.fellah.api.service.AccountService;
 
 @RestController
@@ -16,9 +20,19 @@ import com.fellah.api.service.AccountService;
 public class AccountController {
 	 @Autowired
 	 private AccountService accountService;
-	 @GetMapping("/result")
-	    public List<String> Three(){
-	    	
-	    	return  accountService.getacc();
+	 @PostMapping("/register")
+	    public String Reg(@RequestBody Account e){
+		 if(accountService.getacc(e.getEmail())==null) {
+			 
+			 accountService.saveAccount(e);
+			 return " Bienvenue";
+		 }
+		 else {
+			 return "Email déja existe!";
+		 }
+	 }
+	 @PostMapping("/login")
+	    public Account Log(@RequestBody Account e,Authentication authentication){
+		return accountService.getac(e.getEmail(), e.getMotdepasse());
 	 }
 }

@@ -17,4 +17,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 	 @Query(value="select e.date,sum(e.salaire) from Employee e where e.date between ?1 and ?2  group by e.date order by e.date ",
 	    		nativeQuery = true)	    	 
 	List<Object> sevendays(LocalDate sevenDaysAgoDate, LocalDate today);
+	 @Query(
+				value = "SELECT * FROM employee e where e.id=?1 ", 
+				nativeQuery = true)
+	Employee findkarim(Long id);
 }

@@ -24,24 +24,20 @@ public class Client {
 	private String adresse;
 	@Column(name = "tel")
 	private int tel;
-	@Column(name = "transaction")
-	private long transaction;
-	@Column(name = "date")
-	private Date date;
+	
 
 	public Client() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Client(Long id, String nom, String prenom, String adresse,int tel,long transaction,Date date) {
+	public Client(Long id, String nom, String prenom, String adresse,int tel) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.adresse = adresse;
 		this.tel=tel;
-		this.transaction=transaction;
-		this.date=date;
+		
 	}
 	public int getTel() {
 		return tel;
@@ -73,17 +69,7 @@ public class Client {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	public long getTransaction() {
-		return transaction;
-	}
-	public void setTransaction(long transaction) {
-		this.transaction = transaction;
-	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
+	
+
 	
 }

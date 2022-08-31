@@ -2,6 +2,7 @@ package com.fellah.api.model;
 
 import java.sql.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,36 +21,38 @@ public class Charge {
 	
 	private Long id;
 	private Date date_charge;
-	@ManyToOne
+	private Long prix;
+	/*@ManyToOne
     @JoinColumn(name = "bovin_id",nullable = true)
-    private Animal animal;
-	@ManyToOne
-    @JoinColumn(name = "fournisseur_id",nullable = true)
+    private Animal animal;*/
+	@ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "fournisseur",nullable = true)
     private Fournisseur fournisseur;
-	@ManyToOne
-    @JoinColumn(name = "employee_id",nullable = true)
+	@ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "employee",nullable = true)
     private Employee employee;
-	@ManyToOne
-    @JoinColumn(name = "client_id",nullable = true)
+	@ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "client",nullable = true)
     private Client client;
-	@ManyToOne
-    @JoinColumn(name = "veterinaire_id",nullable = true)
+	@ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "veterinaire",nullable = true)
     private Veterinaire veterinaire;
-	@ManyToOne
+	/*@ManyToOne
     @JoinColumn(name = "visite_id",nullable = true)
-    private Visite visite;
-	@ManyToOne
-    @JoinColumn(name = "alimentation_id",nullable = true)
+    private Visite visite;*/
+	@ManyToOne(cascade = CascadeType.MERGE)
+    @JoinColumn(name = "alimentation",nullable = true)
     private Alimentation alimentation;
 	public Charge() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Charge(Long id, Date date_charge) {
+	public Charge(Long id, Date date_charge,Long prix,Fournisseur fournisseur) {
 		super();
 		this.id = id;
 		this.date_charge = date_charge;
-	
+		this.prix=prix;
+		this.fournisseur=fournisseur;
 	}
 	public Long getId() {
 		return id;
@@ -63,12 +66,12 @@ public class Charge {
 	public void setDate_charge(Date date_charge) {
 		this.date_charge = date_charge;
 	}
-	public Animal getAnimal() {
+	/*public Animal getAnimal() {
 		return animal;
 	}
 	public void setAnimal(Animal animal) {
 		this.animal = animal;
-	}
+	}*/
 	public Fournisseur getFournisseur() {
 		return fournisseur;
 	}
@@ -93,17 +96,23 @@ public class Charge {
 	public void setVeterinaire(Veterinaire veterinaire) {
 		this.veterinaire = veterinaire;
 	}
-	public Visite getVisite() {
+	/*public Visite getVisite() {
 		return visite;
 	}
 	public void setVisite(Visite visite) {
 		this.visite = visite;
-	}
+	}*/
 	public Alimentation getAlimentation() {
 		return alimentation;
 	}
 	public void setAlimentation(Alimentation alimentation) {
 		this.alimentation = alimentation;
+	}
+	public Long getPrix() {
+		return prix;
+	}
+	public void setPrix(Long prix) {
+		this.prix = prix;
 	}
 	
 }
