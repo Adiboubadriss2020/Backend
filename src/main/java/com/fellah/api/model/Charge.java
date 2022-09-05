@@ -21,7 +21,7 @@ public class Charge {
 	
 	private Long id;
 	private Date date_charge;
-	private Long prix;
+	private double prix;
 	/*@ManyToOne
     @JoinColumn(name = "bovin_id",nullable = true)
     private Animal animal;*/
@@ -47,7 +47,7 @@ public class Charge {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Charge(Long id, Date date_charge,Long prix,Fournisseur fournisseur) {
+	public Charge(Long id, Date date_charge,double prix,Fournisseur fournisseur) {
 		super();
 		this.id = id;
 		this.date_charge = date_charge;
@@ -108,10 +108,10 @@ public class Charge {
 	public void setAlimentation(Alimentation alimentation) {
 		this.alimentation = alimentation;
 	}
-	public Long getPrix() {
+	public double getPrix() {
 		return prix;
 	}
-	public void setPrix(Long prix) {
+	public void setPrix(double prix) {
 		this.prix = prix;
 	}
 	

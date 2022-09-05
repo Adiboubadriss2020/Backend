@@ -28,4 +28,12 @@ public interface ChargeRepository extends JpaRepository<Charge, Long>{
 			value = "SELECT ch.date_charge,sum(prix) from charge ch where ch.date_charge between ?1 and ?2  group by ch.date_charge order by ch.date_charge  ", 
 			nativeQuery = true)
 			List<Object> getfilter(LocalDate threeDaysAgoDate,LocalDate today);
+	@Query(
+			value = "SELECT MONTH(ch.date_charge),sum(prix) from charge ch where ch.date_charge between ?1 and ?2 group by MONTH(ch.date_charge) order by MONTH(ch.date_charge)  ", 
+			nativeQuery = true)
+			List<Object> gain(LocalDate threeDaysAgoDate,LocalDate today);
+@Query(
+		value = "SELECT sum(prix) from charge ch ", 
+		nativeQuery = true)
+		Long summ();
 }

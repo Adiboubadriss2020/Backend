@@ -64,7 +64,7 @@ public class AlimentaionImpService implements AlimentationService {
 	}
 
 	@Override
-	public void updatequantity(Long qnt,Long id) {
+	public void updatequantity(double qnt,Long id) {
 		
 		al.updatequantity(qnt, id);
 	}

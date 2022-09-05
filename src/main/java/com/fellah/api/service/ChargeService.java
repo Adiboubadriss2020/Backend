@@ -18,4 +18,6 @@ public interface ChargeService {
 
 	public Charge SaveCharge(Charge charge);
 	public List<Object> getfilter(int d);
+	public Long summ();
+	List<Object> gain(int d);
 }

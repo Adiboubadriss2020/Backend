@@ -17,7 +17,7 @@ public interface AlimentationRepository extends JpaRepository<Alimentation, Long
 			
 			value = "UPDATE alimentation a SET a.quantite_arrivage = a.quantite_arrivage - ?1 WHERE a.id = ?2 ", 
 			nativeQuery = true)
-			void updatequantity(Long qnt,Long id);
+			void updatequantity(double qnt,Long id);
 	@Query(
 			value = "SELECT * FROM alimentation al where al.ref= ?1", 
 			nativeQuery = true)

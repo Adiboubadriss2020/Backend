@@ -22,9 +22,9 @@ public class Alimentation {
 	private Long ref;
 	private String type_alimentation;
 	private Date date_arrivage;
-	private Long quantite_arrivage;
+	private double quantite_arrivage;
 
-	public Alimentation(Long id,Long ref, String type_alimentation, Date date_arrivage, Long quantite_arrivage) {
+	public Alimentation(Long id,Long ref, String type_alimentation, Date date_arrivage, double quantite_arrivage) {
 		super();
 		this.id = id;
 		this.ref=ref;
@@ -55,10 +55,10 @@ public class Alimentation {
 	public void setDate_arrivage(Date date_arrivage) {
 		this.date_arrivage = date_arrivage;
 	}
-	public Long getQuantite_arrivage() {
+	public double getQuantite_arrivage() {
 		return quantite_arrivage;
 	}
-	public void setQuantite_arrivage(Long quantite_arrivage) {
+	public void setQuantite_arrivage(double quantite_arrivage) {
 		this.quantite_arrivage = quantite_arrivage;
 	}
 	

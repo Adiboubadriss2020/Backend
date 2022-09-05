@@ -1,5 +1,6 @@
 package com.fellah.api.service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,21 @@ public class AnimalImpService implements AnimalService {
 		return ar.findAll();
 
 	}
+	@Override
+	public List<Object> getfilter(int d) {
+		LocalDate today=LocalDate.now();
+		LocalDate sevenDaysAgoDate = LocalDate.now().minusDays(d);
+	        return this.ar.getfilter(sevenDaysAgoDate,today);
 
+	}
+	@Override
+	public List<Object> gain(int d) {
+		LocalDate today=LocalDate.now();
+		LocalDate sevenDaysAgoDate = LocalDate.now().minusDays(d);
+			List<Object> a = this.ar.gain(sevenDaysAgoDate,today);
+	        return this.ar.gain(sevenDaysAgoDate,today);
+
+	}
 	@Override
 	public Animal findkarim() {
 		// TODO Auto-generated method stub
@@ -25,11 +40,11 @@ public class AnimalImpService implements AnimalService {
 	}
 
 	@Override
-	public Animal update(Long id, Animal a) {
+	public Animal update(Long id,Animal a) {
 		
 		if (ar.findById(id).isPresent()){
             Animal animal = ar.findById(id).get();
-            if(a.getOrigine()=="" || a.getPoid_achat()==0 || a.getPoid_vente()==0 || a.getPrix_achat()==0) {
+            if(a.getOrigine()=="" || a.getPoid_achat()==0 || a.getPoid_vente()==0 || a.getPrix_achat()==0|| a.getPrix_vente()==0) {
             	return animal;
             }
             System.out.println(a.getDate_achat());
@@ -40,7 +55,7 @@ public class AnimalImpService implements AnimalService {
             animal.setPoid_vente(a.getPoid_vente());
             animal.setPrix_achat(a.getPrix_achat());
             animal.setRef(a.getRef());
-            animal.setInfos(a.getInfos());
+            animal.setPrix_vente(a.getPrix_vente());
             Animal updatedA = ar.save(animal);
 
             return updatedA;
@@ -103,11 +118,11 @@ public class AnimalImpService implements AnimalService {
 		ar.updatestat3();
 	}
 
-	@Override
+	/*@Override
 	public void updateinfos(Long id) {
 		
 		ar.updateinfos(id);
-	}
+	}*/
 
 	@Override
 	public Animal days() {
@@ -122,9 +137,9 @@ public class AnimalImpService implements AnimalService {
 	}
 
 	@Override
-	public List<Object> getLastSevenDays(int d) {
-		// TODO Auto-generated method stub
-		return null;
+	public Long getLastSevenDays() {
+		
+		return ar.sevendays();
 	}
 
 }

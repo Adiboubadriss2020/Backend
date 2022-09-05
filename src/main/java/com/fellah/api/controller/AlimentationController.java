@@ -36,7 +36,7 @@ public class AlimentationController {
 
     	
     	@PutMapping(value = "/updatequantite/{quantite}/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	    public void updatQuantite(@PathVariable(value = "quantite") Long qnt,@PathVariable(value = "id") Long id)
+	    public void updatQuantite(@PathVariable(value = "quantite") double qnt,@PathVariable(value = "id") Long id)
     	{
         	alimentationService.updatequantity(qnt,id);
 	    }

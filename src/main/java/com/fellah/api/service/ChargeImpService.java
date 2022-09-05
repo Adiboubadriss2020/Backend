@@ -33,5 +33,16 @@ public class ChargeImpService implements ChargeService {
 	        return this.ch.getfilter(sevenDaysAgoDate,today);
 
 	}
+	@Override
+	public List<Object> gain(int d) {
+		LocalDate today=LocalDate.now();
+		LocalDate sevenDaysAgoDate = LocalDate.now().minusDays(d);
+	        return this.ch.gain(sevenDaysAgoDate,today);
+
+	}
+	@Override
+	public Long summ() {
+		return ch.summ();
+	}
 
 }
