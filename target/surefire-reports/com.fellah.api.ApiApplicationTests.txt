@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.fellah.api.ApiApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 31.733 s - in com.fellah.api.ApiApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.744 s - in com.fellah.api.ApiApplicationTests
