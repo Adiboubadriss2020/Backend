@@ -22,7 +22,7 @@ import com.fellah.api.service.AnimalService;
 
 @RestController
 @RequestMapping("/animal")
-@CrossOrigin(origins="https://fellah-back.herokuapp.com")
+@CrossOrigin
 public class AnimalController {
 
 	    @Autowired

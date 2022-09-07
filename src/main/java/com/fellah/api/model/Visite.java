@@ -21,6 +21,10 @@ public class Visite {
 	private Long id;
 	@Column(name = "date_visite")
 	private Date date_visite;
+	@Column(name = "medicament")
+	private String medicament;
+	@Column(name = "prix_medicament")
+	private double prix_medicament;
 	@ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "bovin_id",nullable = true)
     private Animal animal;
@@ -63,6 +67,18 @@ public class Visite {
 	}
 	public void setVeterinaire(Veterinaire veterinaire) {
 		this.veterinaire = veterinaire;
+	}
+	public String getMedicament() {
+		return medicament;
+	}
+	public void setMedicament(String medicament) {
+		this.medicament = medicament;
+	}
+	public double getPrix_medicament() {
+		return prix_medicament;
+	}
+	public void setPrix_medicament(double prix_medicament) {
+		this.prix_medicament = prix_medicament;
 	}
 	
 	
