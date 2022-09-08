@@ -37,22 +37,22 @@ public interface AnimalRepository extends JpaRepository<Animal, Long>{
 			nativeQuery = true)
 			void updatestat(@Param("etat") String etat,@Param("id")Long id);
 	
-	
+	/*
 	@Modifying
 	@Transactional
 	@Query(
 			
 			value = "UPDATE animal a SET a.etat = 'Bien' WHERE a.infos IS NULL OR a.infos ='' ", 
 			nativeQuery = true)
-			void updatestat2();
+			void updatestat2();*/
 
-	@Modifying
+	/*@Modifying
 	@Transactional
 	@Query(
 			
 			value = "UPDATE animal a SET a.etat = 'Malade' WHERE a.infos IS NOT NULL ", 
 			nativeQuery = true)
-			void updatestat3();
+			void updatestat3();*
 	/*@Modifying
 	@Transactional
 	@Query(

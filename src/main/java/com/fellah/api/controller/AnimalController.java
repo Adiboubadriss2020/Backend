@@ -71,9 +71,9 @@ public class AnimalController {
 	    }
 	    @GetMapping("/etat")
 	    public List<Animal> malade(){
-	    	animalService.updatestat3();
+	    /*	animalService.updatestat3();
 	    	animalService.updatestat2();
-	    	
+	    	*/
 
 	        return animalService.etat();
 	    }
@@ -96,8 +96,9 @@ public class AnimalController {
 	    @PutMapping(value = "update/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	    public ResponseEntity<Animal> updatAnimal(@PathVariable(value = "id") Long id,
 	                                                         @RequestBody Animal animal)
-	    {animalService.updatestat3();
-	    	animalService.updatestat2();
+	    {
+	    	/*animalService.updatestat3();
+	    	animalService.updatestat2();*/
 	    	
 	        return new ResponseEntity<>(animalService.update(id, animal), HttpStatus.OK);
 	    }

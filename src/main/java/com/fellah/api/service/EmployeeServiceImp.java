@@ -48,7 +48,7 @@ public class EmployeeServiceImp implements EmployeeService {
 
         if (emp.findById(id).isPresent()){
             Employee employee = emp.findById(id).get();
-            if(em.getNom()==""|| em.getPrenom()=="" || em.getAdresse()==""||em.getAge()==0) {
+            if(em.getNom()==""|| em.getPrenom()=="" || em.getAdresse()==""||em.getAge()<=17 || em.getAge()>=99) {
             	return employee;
             }
             employee.setNom(em.getNom());

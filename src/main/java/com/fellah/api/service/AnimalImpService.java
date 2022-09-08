@@ -44,7 +44,7 @@ public class AnimalImpService implements AnimalService {
 		
 		if (ar.findById(id).isPresent()){
             Animal animal = ar.findById(id).get();
-            if(a.getOrigine()=="" || a.getPoid_achat()==0 || a.getPoid_vente()==0 || a.getPrix_achat()==0|| a.getPrix_vente()==0) {
+            if(a.getOrigine()=="" || a.getPoid_achat()==0  || a.getPrix_achat()== 0) {
             	return animal;
             }
             System.out.println(a.getDate_achat());
@@ -107,7 +107,7 @@ public class AnimalImpService implements AnimalService {
         }
 	}
 
-	@Override
+	/*@Override
 	public void updatestat2() {
 		ar.updatestat2();
 		
@@ -117,7 +117,7 @@ public class AnimalImpService implements AnimalService {
 	public void updatestat3() {
 		ar.updatestat3();
 	}
-
+*/
 	/*@Override
 	public void updateinfos(Long id) {
 		
