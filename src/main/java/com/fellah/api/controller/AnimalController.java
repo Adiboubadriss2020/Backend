@@ -55,6 +55,7 @@ public class AnimalController {
 	    public Long Allan(){
 	        return animalService.allAn();
 	    }
+	    @CrossOrigin(origins = "https://fellah-back.herokuapp.com")
 	    @GetMapping("/sum")
 	    public Long summ(){
 	        return animalService.getLastSevenDays();
