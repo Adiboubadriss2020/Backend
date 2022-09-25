@@ -16,5 +16,9 @@ public interface VeterinaireRepository extends JpaRepository<Veterinaire, Long> 
 				value = "SELECT * FROM veterinaire v where v.nom= ?1", 
 				nativeQuery = true)
 	 			Veterinaire check(String nom);
+	 @Query(
+				value = "SELECT * from veterinaire v where v.id=?1", 
+				nativeQuery = true)
+	 			Veterinaire findkarim(Long id);
 	    	 
 }

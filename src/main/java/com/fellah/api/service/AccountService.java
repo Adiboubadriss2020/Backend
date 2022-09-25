@@ -8,5 +8,6 @@ import com.fellah.api.model.Account;
 @Service
 public interface AccountService {
 	public Account saveAccount(Account account);
-	public List<String> getacc();
+	Account getacc(String e);
+	Account getac(String e,String p);
 }

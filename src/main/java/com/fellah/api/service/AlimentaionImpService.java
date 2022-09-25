@@ -26,21 +26,20 @@ public class AlimentaionImpService implements AlimentationService {
 	}
 
 	@Override
-	public Alimentation findkarim() {
-		// TODO Auto-generated method stub
-		return null;
+	public Alimentation findkarim(Long id) {
+		
+		return al.findkarim(id);
 	}
 
 	@Override
 	public Alimentation update(Long id, Alimentation a) {
 		if (al.findById(id).isPresent()){
             Alimentation alimentation = al.findById(id).get();
-            if(a.getQuantite_arrivage()==0|| a.getPrix_arrivage()==0 || a.getType_alimentation()=="") {
+            if(a.getQuantite_arrivage()==0||a.getType_alimentation()=="") {
             	return alimentation;
             }
             alimentation.setDate_arrivage(a.getDate_arrivage());
             alimentation.setQuantite_arrivage(a.getQuantite_arrivage());
-            alimentation.setPrix_arrivage(a.getPrix_arrivage());
             alimentation.setType_alimentation(a.getType_alimentation());
             alimentation.setRef(a.getRef());
 
@@ -65,7 +64,7 @@ public class AlimentaionImpService implements AlimentationService {
 	}
 
 	@Override
-	public void updatequantity(Long qnt,Long id) {
+	public void updatequantity(double qnt,Long id) {
 		
 		al.updatequantity(qnt, id);
 	}
@@ -79,5 +78,6 @@ public class AlimentaionImpService implements AlimentationService {
 
 	}
 
+	
 
 }

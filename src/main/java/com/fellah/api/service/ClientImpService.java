@@ -33,17 +33,13 @@ public class ClientImpService implements ClientService {
 
 	}
 	
-	@Override
-	public Client findkarim() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Client update(Long id, Client client) {
 		 if (cr.findById(id).isPresent()){
 	            Client c = cr.findById(id).get();
-	            if(client.getNom()=="" || client.getPrenom()=="" || client.getAdresse()=="" || client.getTel()==0) {
+	            if(client.getNom()=="" || client.getPrenom()=="" || client.getAdresse()=="" || client.getTel()==0 
+	      ) {
 	            	return c;
 	            }
 	            c.setNom(client.getNom());
@@ -66,6 +62,12 @@ public class ClientImpService implements ClientService {
 	@Override
 	public Long allClt() {
 		return cr.all();
+	}
+
+	@Override
+	public Client findkarim(Long id) {
+		return cr.findkarim(id);
+		
 	}
 
 }

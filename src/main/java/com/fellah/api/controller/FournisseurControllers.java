@@ -21,15 +21,12 @@ public class FournisseurControllers {
 	
 	    @Autowired
 	    private FournisseurService fournisseurService;
-	    @Autowired
-	    private ChargeService chargeService;
+	
 	    
 
 	    @PostMapping("/add")
 	    public String add(@RequestBody Fournisseur fournisseur){
-	    	LocalDate today = LocalDate.now();
 	    	fournisseurService.saveFournisseur(fournisseur);
-	    	chargeService.SaveCharge(today, null, null, null, null, fournisseur, null,null);
 	        
 	        return "New fournisseur is added";
 	    }
@@ -44,14 +41,14 @@ public class FournisseurControllers {
 	    	
 	        return	fournisseurService.allF();
 	    }
-	    
+	  
 	    @GetMapping("/getAll")
 	    public List<Fournisseur> list(){
 	        return fournisseurService.getAllFournisseurs();
 	    }
-	    @GetMapping("/getnom")
-	    public Fournisseur karim(){
-	        return fournisseurService.findkarim();
+	    @GetMapping("/find/{id}")
+	    public Fournisseur karim(@PathVariable(value = "id")Long id){
+	        return fournisseurService.findkarim(id);
 	    }
 		// update employee rest api
 		

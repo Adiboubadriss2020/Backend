@@ -13,6 +13,7 @@ public interface VeterinaireService {
 	List<Veterinaire> getAllVeterinaires();
 	Veterinaire update(Long id, Veterinaire veterinaire);
 	public Veterinaire check(String nom);
+	public Veterinaire findkarim(Long id);
 
 }
 

@@ -37,33 +37,41 @@ public interface AnimalRepository extends JpaRepository<Animal, Long>{
 			nativeQuery = true)
 			void updatestat(@Param("etat") String etat,@Param("id")Long id);
 	
-	
+	/*
 	@Modifying
 	@Transactional
 	@Query(
 			
 			value = "UPDATE animal a SET a.etat = 'Bien' WHERE a.infos IS NULL OR a.infos ='' ", 
 			nativeQuery = true)
-			void updatestat2();
+			void updatestat2();*/
 
-	@Modifying
+	/*@Modifying
 	@Transactional
 	@Query(
 			
 			value = "UPDATE animal a SET a.etat = 'Malade' WHERE a.infos IS NOT NULL ", 
 			nativeQuery = true)
-			void updatestat3();
-	@Modifying
+			void updatestat3();*
+	/*@Modifying
 	@Transactional
 	@Query(
 			
 			value = "UPDATE animal a SET a.infos = '' WHERE a.id= :id", 
 			nativeQuery = true)
-			void updateinfos(@Param("id")Long id);
+			void updateinfos(@Param("id")Long id);*/
+	@Query(
+			value = "SELECT a.date_vente,sum(a.prix_vente) from animal a where a.date_vente between ?1 and ?2  group by a.date_vente order by a.date_vente  ", 
+			nativeQuery = true)
+			List<Object> getfilter(LocalDate threeDaysAgoDate,LocalDate today);
+	@Query(
+			value = "SELECT MONTH(a.date_vente) ,sum(a.prix_vente) from animal a where  a.date_vente between ?1 and ?2 group by MONTH(a.date_vente) order by MONTH(a.date_vente)  ", 
+			nativeQuery = true)
+			List<Object> gain(LocalDate threeDaysAgoDate,LocalDate today);
 	
-	 @Query(value="select a.date_achat,sum(a.prix_achat) from Animal a where a.date_achat between ?1 and ?2  group by a.date_achat order by a.date_achat ",
+	 @Query(value="select sum(a.prix_vente) from Animal a",
 	    		nativeQuery = true)	    	 
-	List<Object> sevendays(LocalDate sevenDaysAgoDate, LocalDate today);
+	 Long sevendays();
 }
 
 

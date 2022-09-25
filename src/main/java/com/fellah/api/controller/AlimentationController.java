@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fellah.api.model.Alimentation;
-
+import com.fellah.api.model.Client;
 import com.fellah.api.service.AlimentationService;
 
 
@@ -36,7 +36,7 @@ public class AlimentationController {
 
     	
     	@PutMapping(value = "/updatequantite/{quantite}/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	    public void updatQuantite(@PathVariable(value = "quantite") Long qnt,@PathVariable(value = "id") Long id)
+	    public void updatQuantite(@PathVariable(value = "quantite") double qnt,@PathVariable(value = "id") Long id)
     	{
         	alimentationService.updatequantity(qnt,id);
 	    }
@@ -62,11 +62,10 @@ public class AlimentationController {
 
 	    }
 	    
-	    /*@GetMapping("/getnom")
-	    public Fournisseur karim(){
-	        return fournisseurService.findkarim();
-	    }*/
-		// update employee rest api
+	    @GetMapping("/find/{id}")
+	    public Alimentation karim(@PathVariable(value = "id")Long id){
+	        return alimentationService.findkarim(id);
+	    }
 		
 	    @PutMapping(value = "update/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	    public ResponseEntity<Alimentation> updatAlimentation(@PathVariable(value = "id") Long id,

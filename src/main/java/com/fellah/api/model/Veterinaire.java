@@ -19,10 +19,7 @@ public class Veterinaire {
 	private String nom;
 	@Column(name = "telephone")
 	private int telephone;
-	@Column(name = "transaction")
-	private long transaction;
-	@Column(name = "date")
-	private Date date;
+
 	
 	
 	public Veterinaire() {
@@ -54,18 +51,6 @@ public class Veterinaire {
 		this.telephone = telephone;
 	}
 	
-	public long getTransaction() {
-		return transaction;
-	}
-	public void setTransaction(long transaction) {
-		this.transaction = transaction;
-	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
 
 	
 }

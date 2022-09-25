@@ -21,7 +21,9 @@ public class Animal {
 	@Column(name = "origine")
 	private String origine;
 	@Column(name = "prix_achat")
-	private Long prix_achat;
+	private double prix_achat;
+	@Column(name = "prix_vente")
+	private double prix_vente;
 	@Column(name = "poid_achat")
 	private Long poid_achat;
 	@Column(name = "date_achat")
@@ -32,25 +34,24 @@ public class Animal {
 	private Date date_vente;
 	@Column(name = "etat")
 	private String etat;
-	@Column(name = "infos")
-	private String infos;
 
 	public Animal() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Animal(Long id,Long ref, String origine, Long prix_achat, Long poid_achat, Date date_achat, Long poid_vente,
-			Date date_vente,String etat,String infos) {
+	public Animal(Long id,Long ref, String origine, double prix_achat, Long poid_achat, Date date_achat, Long poid_vente,
+			Date date_vente,String etat,double prix_vente) {
 		super();
 		this.origine = origine;
 		this.prix_achat = prix_achat;
+		this.prix_vente = prix_vente;
 		this.poid_achat = poid_achat;
 		this.date_achat = date_achat;
 		this.poid_vente = poid_vente;
 		this.date_vente = date_vente;
 		this.etat = etat;
 		this.id = id;
-		this.infos=infos;
+	
 		this.ref=ref;
 	}
 	
@@ -60,10 +61,10 @@ public class Animal {
 	public void setOrigine(String origine) {
 		this.origine = origine;
 	}
-	public Long getPrix_achat() {
+	public double getPrix_achat() {
 		return prix_achat;
 	}
-	public void setPrix_achat(Long prix_achat) {
+	public void setPrix_achat(double prix_achat) {
 		this.prix_achat = prix_achat;
 	}
 	public Long getPoid_achat() {
@@ -97,12 +98,12 @@ public class Animal {
 		this.etat = etat;
 	}
 	
-	
-	public String getInfos() {
-		return infos;
+
+	public double getPrix_vente() {
+		return prix_vente;
 	}
-	public void setInfos(String infos) {
-		this.infos = infos;
+	public void setPrix_vente(double prix_vente) {
+		this.prix_vente = prix_vente;
 	}
 	public Long getId() {
 		return id;

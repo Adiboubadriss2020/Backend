@@ -30,8 +30,8 @@ public class AnimalController {
 
 	    @PostMapping("/add")
 	    public String add(@RequestBody Animal animal){
-	    	animalService.updatestat3();
-	    	animalService.updatestat2();
+	    	/*animalService.updatestat3();
+	    	animalService.updatestat2();*/
 	    	
 	    	animalService.saveAnimal(animal);
 	        return "New animal is added";
@@ -55,20 +55,34 @@ public class AnimalController {
 	    public Long Allan(){
 	        return animalService.allAn();
 	    }
+	    @GetMapping("/sum")
+	    public Long summ(){
+	        return animalService.getLastSevenDays();
+	    }
+	    @GetMapping("/days/{d}")
+	    public List<Object> Seven(@PathVariable(value = "d") int d)
+	    {    
+	    	return animalService.getfilter(d);   
+	    }
+	    @GetMapping("/sum/days/{d}")
+	    public List<Object> gain(@PathVariable(value = "d") int d)
+	    {    
+	    	return animalService.gain(d);   
+	    }
 	    @GetMapping("/etat")
 	    public List<Animal> malade(){
-	    	animalService.updatestat3();
+	    /*	animalService.updatestat3();
 	    	animalService.updatestat2();
-	    	
+	    	*/
 
 	        return animalService.etat();
 	    }
 
 	    @GetMapping("/getAll")
 	    public List<Animal> list(){
-	    	animalService.updatestat3();
+	    	/*animalService.updatestat3();
 
-	    	animalService.updatestat2();
+	    	animalService.updatestat2();*/
 
 
 	        return animalService.getAllAnimals();
@@ -82,18 +96,19 @@ public class AnimalController {
 	    @PutMapping(value = "update/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
 	    public ResponseEntity<Animal> updatAnimal(@PathVariable(value = "id") Long id,
 	                                                         @RequestBody Animal animal)
-	    {animalService.updatestat3();
-	    	animalService.updatestat2();
+	    {
+	    	/*animalService.updatestat3();
+	    	animalService.updatestat2();*/
 	    	
 	        return new ResponseEntity<>(animalService.update(id, animal), HttpStatus.OK);
 	    }
 	    
-	    @PutMapping("/updateinfos/{id}")
+	    /*@PutMapping("/updateinfos/{id}")
 	    public String updateInf(@PathVariable(value = "id") Long id){
 	    	animalService.updateinfos(id);
 
 	        return "Updated!";
-	    }
+	    }*/
 		// delete employee rest api
 		@DeleteMapping("/delete/{id}")
 		public String deleted(@PathVariable(value = "id") Long id) {

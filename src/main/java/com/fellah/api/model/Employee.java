@@ -21,28 +21,26 @@ public class Employee {
 	private String nom;
 	@Column(name = "prenom")
 	private String prenom;
-	@Column(name = "salaire")
-	private Long salaire;
+	
 	@Column(name = "age")
 	private int age;
 	@Column(name = "adresse")
 	private String adresse;
-	@Column(name = "date")
-	private Date date;
+	
 
 	public Employee() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Employee(Long id, String nom, String prenom, Long salaire, int age, String adresse,long transactionn,Date date) {
+	public Employee(Long id, String nom, String prenom, int age, String adresse,long transactionn) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
-		this.salaire = salaire;
+		
 		this.age = age;
 		this.adresse = adresse;
-		this.date=date;
+	
 	}
 	public Long getId() {
 		return id;
@@ -62,12 +60,7 @@ public class Employee {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	public Long getSalaire() {
-		return salaire;
-	}
-	public void setSalaire(Long salaire) {
-		this.salaire = salaire;
-	}
+	
 	public int getAge() {
 		return age;
 	}
@@ -80,11 +73,6 @@ public class Employee {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
-	}
+	
 	
 }

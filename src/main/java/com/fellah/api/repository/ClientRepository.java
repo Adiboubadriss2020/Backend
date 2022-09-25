@@ -17,4 +17,9 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
 	 @Query(value="select c.date,sum(c.transaction) from Client c where c.date between ?1 and ?2  group by c.date order by c.date ",
 	    		nativeQuery = true)
 	List<Object> sevendays(LocalDate sevenDaysAgoDate, LocalDate today);
+	 
+	 @Query(
+				value = "SELECT * from client c where c.id = ?1", 
+				nativeQuery = true)
+	Client findkarim(Long id);
 }

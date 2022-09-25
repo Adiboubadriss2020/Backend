@@ -15,12 +15,14 @@ public interface AnimalService {
     public void delete(Long id);
 	public Long allAn();
 	public List<Animal> etat();
-	void updatestat2();
-	void updatestat3();
+	/*void updatestat2();
+	void updatestat3();*/
 	public Animal updatestat(Long id, Animal a);
-	public void updateinfos(Long id);
+	//public void updateinfos(Long id);
 	public Animal days();
 	public Animal check(Long ref);
-	List<Object> getLastSevenDays(int d);
+	Long getLastSevenDays();
+	List<Object> getfilter(int d);
+	List<Object> gain(int d);
 
 }

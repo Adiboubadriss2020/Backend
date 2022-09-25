@@ -19,7 +19,7 @@ public class FournisseurServiceImp implements FournisseurService {
 	@Override
 	public Fournisseur saveFournisseur(Fournisseur fournisseur) {
         return fr.save(fournisseur);
-		
+        	
 	}
 
 	@Override
@@ -39,9 +39,8 @@ public class FournisseurServiceImp implements FournisseurService {
 	
 
 	@Override
-	public Fournisseur findkarim() {
-		Fournisseur f = fr.findkarim();
-		return f;
+	public Fournisseur findkarim(Long id) {
+		return fr.findkarim(id);
 	}
 
 	@Override
@@ -49,19 +48,19 @@ public class FournisseurServiceImp implements FournisseurService {
 
         if (fr.findById(id).isPresent()){
             Fournisseur existingF = fr.findById(id).get();
-            if(f.getNom() ==""|| f.getTransaction()==0|| f.getEmail()=="" || f.getAdresse()=="") {
+            if(f.getNom() ==""||  f.getEmail()=="" || f.getAdresse()=="") {
             	return existingF  ;  
        }
             existingF.setNom(f.getNom());
             existingF.setEmail(f.getEmail());
             existingF.setAdresse(f.getAdresse());
-            existingF.setTransaction(f.getTransaction());
-            existingF.setDate(f.getDate());
+            existingF.setCommercial(f.getCommercial());
+         
 
             Fournisseur updatedF = fr.save(existingF);
 
             return new Fournisseur(updatedF.getId(), updatedF.getNom(),
-                    updatedF.getEmail(), updatedF.getAdresse(),updatedF.getTransaction(),updatedF.getDate());
+                    updatedF.getEmail(), updatedF.getAdresse(),updatedF.getCommercial());
         }else{
             return null;
         }
@@ -83,5 +82,11 @@ public class FournisseurServiceImp implements FournisseurService {
 	public Fournisseur update(Long id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public List<Fournisseur> getnom() {
+		return fr.nom();
+		
 	}
 }

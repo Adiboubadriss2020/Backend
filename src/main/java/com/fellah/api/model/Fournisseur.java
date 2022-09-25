@@ -21,19 +21,18 @@ public class Fournisseur {
 	private String email;
 	@Column(name = "adresse")
 	private String adresse;
-	@Column(name = "transaction")
-	private long transaction;
-	@Column(name = "date")
-	private Date date;
+	@Column(name = "commercial")
+	private String commercial;
+
 	
-	public Fournisseur(Long id, String nom, String email, String adresse,long transaction,Date date) {
+	public Fournisseur(Long id, String nom, String email, String adresse,String commercial) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.email = email;
 		this.adresse = adresse;
-		this.transaction=transaction;
-		this.date=date;
+		this.commercial = commercial;
+		
 	}
 	public Fournisseur() {
 		super();
@@ -63,17 +62,13 @@ public class Fournisseur {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-	public long getTransaction() {
-		return transaction;
+	
+
+	public String getCommercial() {
+		return commercial;
 	}
-	public void setTransaction(long transaction) {
-		this.transaction = transaction;
-	}
-	public Date getDate() {
-		return date;
-	}
-	public void setDate(Date date) {
-		this.date = date;
+	public void setCommercial(String commercial) {
+		this.commercial = commercial;
 	}
 
 	

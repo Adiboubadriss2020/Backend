@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fellah.api.model.Employee;
+import com.fellah.api.model.Fournisseur;
 import com.fellah.api.repository.EmployeeRepository;
 
 import java.time.LocalDate;
@@ -35,10 +36,10 @@ public class EmployeeServiceImp implements EmployeeService {
 	        return this.emp.sevendays(sevenDaysAgoDate,today);
 
 	}
+	
 	@Override
-	public Employee findkarim() {
-		// TODO Auto-generated method stub
-		return null;
+	public Employee findkarim(Long id) {
+		return emp.findkarim(id);
 	}
 
 	@Override
@@ -47,14 +48,13 @@ public class EmployeeServiceImp implements EmployeeService {
 
         if (emp.findById(id).isPresent()){
             Employee employee = emp.findById(id).get();
-            if(em.getNom()==""|| em.getPrenom()=="" || em.getAdresse()==""||em.getAge()==0||em.getSalaire()==0) {
+            if(em.getNom()==""|| em.getPrenom()=="" || em.getAdresse()==""||em.getAge()<=17 || em.getAge()>=99) {
             	return employee;
             }
             employee.setNom(em.getNom());
             employee.setPrenom(em.getPrenom());
             employee.setAdresse(em.getAdresse());
             employee.setAge(em.getAge());
-            employee.setSalaire(em.getSalaire());
             
 
             Employee updatedEmp = emp.save(employee);

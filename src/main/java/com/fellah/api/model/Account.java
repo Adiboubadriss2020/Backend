@@ -18,10 +18,13 @@ public class Account {
 
     @Column(name = "name")
     private String name;
-
-    @Column(name = "email")
+    @Column(name = "email", unique=true)
     private String email;
 
+    @Column(name = "motdepasse")
+    private String motdepasse;
+    /*@Column(name = "password2")
+    private String motdepasse2;*/
 	public Long getId() {
 		return id;
 	}
@@ -38,15 +41,33 @@ public class Account {
 		this.name = name;
 	}
 
-	public String getEmailAddress() {
+
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmailAddress(String email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-   /* @OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
-    private List<AccountSettings> accountSettings = new ArrayList<>();*/
+	public String getMotdepasse() {
+		return motdepasse;
+	}
+
+	public void setMotdepasse(String motdepasse) {
+		this.motdepasse = motdepasse;
+	}
+
+/*	public String getMotdepasse2() {
+		return motdepasse2;
+	}
+
+	public void setMotdepasse2(String motdepasse2) {
+		this.motdepasse2 = motdepasse2;
+	}*/
+
+
+
+   
 
 }

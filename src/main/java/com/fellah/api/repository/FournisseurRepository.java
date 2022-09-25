@@ -18,15 +18,18 @@ public interface FournisseurRepository extends JpaRepository<Fournisseur,Long> {
 	    	 
 	 
 	@Query(
-	value = "SELECT f.date,c.date,(f.transaction+c.salaire) FROM fournisseur f, client c "
-			+ "where f.date and c.date between ?1 and ?2", 
+	value = "select * from fournisseur f where f.id = ?1", 
 	nativeQuery = true)
-	Fournisseur findkarim();
+	Fournisseur findkarim(Long id);
 	
 	@Query(
 			value = "SELECT count(*) FROM fournisseur", 
 			nativeQuery = true)
 			Long all();
+	@Query(
+			value = "SELECT * FROM fournisseur", 
+			nativeQuery = true)
+			List<Fournisseur> nom();
 
 
 

@@ -39,8 +39,7 @@ public class VeterinaireImpService implements VeterinaireService {
 
 	            v.setNom(veterinaire.getNom());
 	            v.setTelephone(veterinaire.getTelephone());
-	            v.setTransaction(veterinaire.getTransaction());
-	            v.setDate(veterinaire.getDate());
+	         
 	            Veterinaire vet= vr.save(veterinaire);
 
 	            return vet;
@@ -64,6 +63,12 @@ public class VeterinaireImpService implements VeterinaireService {
 	public Veterinaire check(String nom) {
 		return vr.check(nom);
 
+	}
+
+	@Override
+	public Veterinaire findkarim(Long id) {
+		vr.findkarim(id);
+		return null;
 	}
 
 	
