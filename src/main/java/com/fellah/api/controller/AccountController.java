@@ -16,7 +16,7 @@ import com.fellah.api.service.AccountService;
 
 @RestController
 @RequestMapping("/account")
-@CrossOrigin
+@CrossOrigin(origins= "*")
 public class AccountController {
 	 @Autowired
 	 private AccountService accountService;

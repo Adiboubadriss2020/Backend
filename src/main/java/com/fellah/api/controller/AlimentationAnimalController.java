@@ -17,7 +17,7 @@ import com.fellah.api.service.AlimentationAnimalService;
 
 @RestController
 @RequestMapping("/alimentationanimal")
-@CrossOrigin
+@CrossOrigin(origins= "*")
 public class AlimentationAnimalController {
 	 @Autowired
 	    private AlimentationAnimalService alimentationService;

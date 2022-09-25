@@ -23,7 +23,7 @@ import com.fellah.api.service.AlimentationService;
 
 @RestController
 @RequestMapping("/alimentation")
-@CrossOrigin
+@CrossOrigin(origins= "*")
 public class AlimentationController {
 	 @Autowired
 	    private AlimentationService alimentationService;

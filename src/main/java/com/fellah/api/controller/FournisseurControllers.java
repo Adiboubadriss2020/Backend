@@ -15,7 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/fournisseur")
-@CrossOrigin
+@CrossOrigin(origins= "*")
 public class FournisseurControllers {
 	
 	

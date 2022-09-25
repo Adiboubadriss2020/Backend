@@ -22,7 +22,7 @@ import com.fellah.api.service.VeterinaireService;
 
 @RestController
 @RequestMapping("/veterinaire")
-@CrossOrigin
+@CrossOrigin(origins= "*")
 public class VeterinaireController {
 
 	

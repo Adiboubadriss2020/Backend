@@ -21,7 +21,7 @@ import com.fellah.api.model.Visite;
 import com.fellah.api.service.VisiteService;
 @RestController
 @RequestMapping("/visite")
-@CrossOrigin
+@CrossOrigin(origins= "*")
 public class VisiteController {
 	 @Autowired
 	    private VisiteService VisiteService;

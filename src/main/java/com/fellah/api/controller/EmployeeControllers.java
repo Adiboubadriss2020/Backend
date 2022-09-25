@@ -22,7 +22,7 @@ import com.fellah.api.service.EmployeeService;
 
 @RestController
 @RequestMapping("/employee")
-@CrossOrigin
+@CrossOrigin(origins= "*")
 public class EmployeeControllers {
 
 	 	@Autowired

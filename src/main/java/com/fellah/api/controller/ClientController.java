@@ -22,7 +22,7 @@ import com.fellah.api.service.ClientService;
 
 @RestController
 @RequestMapping("/client")
-@CrossOrigin
+@CrossOrigin(origins= "*")
 public class ClientController {
 
 	
