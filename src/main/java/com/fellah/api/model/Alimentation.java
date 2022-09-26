@@ -20,17 +20,19 @@ public class Alimentation {
 	private Long id;
 	@Column(unique=true)
 	private Long ref;
+	private Long prix_arrivage;
 	private String type_alimentation;
 	private Date date_arrivage;
 	private double quantite_arrivage;
 
-	public Alimentation(Long id,Long ref, String type_alimentation, Date date_arrivage, double quantite_arrivage) {
+	public Alimentation(Long id,Long ref, String type_alimentation, Date date_arrivage, double quantite_arrivage,Long prix_arrivage) {
 		super();
 		this.id = id;
 		this.ref=ref;
 		this.type_alimentation = type_alimentation;
 		this.date_arrivage = date_arrivage;
 		this.quantite_arrivage = quantite_arrivage;
+		this.prix_arrivage=prix_arrivage;
 		
 	}
 	public Alimentation() {
@@ -67,6 +69,12 @@ public class Alimentation {
 	}
 	public void setRef(Long ref) {
 		this.ref = ref;
+	}
+	public Long getPrix_arrivage() {
+		return prix_arrivage;
+	}
+	public void setPrix_arrivage(Long prix_arrivage) {
+		this.prix_arrivage = prix_arrivage;
 	}
 	
 	

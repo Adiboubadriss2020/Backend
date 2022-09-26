@@ -19,6 +19,8 @@ public class Veterinaire {
 	private String nom;
 	@Column(name = "telephone")
 	private int telephone;
+	@Column(name = "adresse")
+	private String adresse;
 
 	
 	
@@ -26,11 +28,12 @@ public class Veterinaire {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Veterinaire(Long id, String nom, int telephone) {
+	public Veterinaire(Long id, String nom, int telephone, String adresse) {
 		super();
 		this.id = id;
 		this.nom = nom;
 		this.telephone = telephone;
+		this.adresse=adresse;
 	}
 	public Long  getId() {
 		return id;
@@ -49,6 +52,12 @@ public class Veterinaire {
 	}
 	public void setTelephone(int telephone) {
 		this.telephone = telephone;
+	}
+	public String getAdresse() {
+		return adresse;
+	}
+	public void setAdresse(String adresse) {
+		this.adresse = adresse;
 	}
 	
 
