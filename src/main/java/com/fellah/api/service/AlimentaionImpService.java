@@ -17,11 +17,9 @@ public class AlimentaionImpService implements AlimentationService {
     private AlimentationRepository al;
   	@Autowired
     private ChargeRepository ch;
-	private Charge charge;
 	@Override
 	public Alimentation saveAlimentation(Alimentation alimentation) {
-		charge = null;
-    	charge.setAlimentation(alimentation);
+		Charge charge = new Charge(null, null, 0, null, null, null, null, alimentation);
     	charge.setDate_charge(alimentation.getDate_arrivage());
     	charge.setPrix(alimentation.getPrix_arrivage());
     	ch.save(charge);

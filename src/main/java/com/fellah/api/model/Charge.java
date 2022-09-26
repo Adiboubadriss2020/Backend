@@ -47,12 +47,16 @@ public class Charge {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Charge(Long id, Date date_charge,double prix,Fournisseur fournisseur) {
+	public Charge(Long id, Date date_charge,double prix,Fournisseur fournisseur,Employee employee,Client client,Veterinaire veterinaire,Alimentation alimentation) {
 		super();
 		this.id = id;
 		this.date_charge = date_charge;
 		this.prix=prix;
 		this.fournisseur=fournisseur;
+		this.employee=employee;
+		this.client=client;
+		this.veterinaire=veterinaire;
+		this.alimentation=alimentation;
 	}
 	public Long getId() {
 		return id;
