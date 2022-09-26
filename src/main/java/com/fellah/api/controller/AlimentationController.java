@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fellah.api.model.Alimentation;
+import com.fellah.api.model.Charge;
 import com.fellah.api.model.Client;
 import com.fellah.api.service.AlimentationService;
+import com.fellah.api.service.ChargeService;
 
 
 @RestController
@@ -27,9 +29,14 @@ import com.fellah.api.service.AlimentationService;
 public class AlimentationController {
 	 @Autowired
 	    private AlimentationService alimentationService;
-
+	 @Autowired
+	    private ChargeService ch;
 	    @PostMapping("/add")
 	    public String add(@RequestBody Alimentation alimentation){
+	    	Charge charge = new Charge();
+	    	charge.setAlimentation(alimentation);
+	    	charge.setDate_charge(alimentation.getDate_arrivage());
+	    	charge.setPrix(alimentation.getPrix_arrivage());
 	    	alimentationService.saveAlimentation(alimentation);
 	        return "New alimentation is added";
 	    }
