@@ -20,11 +20,11 @@ public class AlimentaionImpService implements AlimentationService {
 	private Charge charge;
 	@Override
 	public Alimentation saveAlimentation(Alimentation alimentation) {
-		/*charge = null;
+		charge = null;
     	charge.setAlimentation(alimentation);
     	charge.setDate_charge(alimentation.getDate_arrivage());
     	charge.setPrix(alimentation.getPrix_arrivage());
-    	ch.save(charge);*/
+    	ch.save(charge);
 		return al.save(alimentation);
 	}
 
