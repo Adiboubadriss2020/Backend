@@ -7,15 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fellah.api.model.Alimentation;
+import com.fellah.api.model.Charge;
 import com.fellah.api.repository.AlimentationRepository;
+import com.fellah.api.repository.ChargeRepository;
 @Service
 public class AlimentaionImpService implements AlimentationService {
 
   	@Autowired
     private AlimentationRepository al;
+  	@Autowired
+    private ChargeRepository ch;
 	@Override
 	public Alimentation saveAlimentation(Alimentation alimentation) {
-		
+		Charge charge = new Charge();
+    	charge.setAlimentation(alimentation);
+    	charge.setDate_charge(alimentation.getDate_arrivage());
+    	charge.setPrix(alimentation.getPrix_arrivage());
+    	ch.save(charge);
 		return al.save(alimentation);
 	}
 
