@@ -17,13 +17,14 @@ public class AlimentaionImpService implements AlimentationService {
     private AlimentationRepository al;
   	@Autowired
     private ChargeRepository ch;
+	private Charge charge;
 	@Override
 	public Alimentation saveAlimentation(Alimentation alimentation) {
-		Charge charge = new Charge();
+		/*charge = null;
     	charge.setAlimentation(alimentation);
     	charge.setDate_charge(alimentation.getDate_arrivage());
     	charge.setPrix(alimentation.getPrix_arrivage());
-    	ch.save(charge);
+    	ch.save(charge);*/
 		return al.save(alimentation);
 	}
 
