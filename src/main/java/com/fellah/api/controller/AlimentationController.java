@@ -37,6 +37,7 @@ public class AlimentationController {
 	    	charge.setAlimentation(alimentation);
 	    	charge.setDate_charge(alimentation.getDate_arrivage());
 	    	charge.setPrix(alimentation.getPrix_arrivage());
+	    	ch.SaveCharge(charge);
 	    	alimentationService.saveAlimentation(alimentation);
 	        return "New alimentation is added";
 	    }
