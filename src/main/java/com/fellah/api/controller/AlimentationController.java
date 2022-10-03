@@ -33,8 +33,10 @@ public class AlimentationController {
 	    private ChargeService ch;
 	 
 	    @PostMapping("/add")
-	    public String add(@RequestBody Alimentation alimentation){
-	    
+	    public String add(@RequestBody Alimentation alimentation,Charge charge){
+	    	charge.setDate_charge(alimentation.getDate_arrivage());
+	    	charge.setPrix(alimentation.getPrix_arrivage());
+	    	ch.SaveCharge(charge);
 	    	alimentationService.saveAlimentation(alimentation);
 	        return "New alimentation is added";
 	    }
