@@ -31,6 +31,7 @@ public class AlimentationController {
 	    private AlimentationService alimentationService;
 	 @Autowired
 	    private ChargeService ch;
+	 
 	    @PostMapping("/add")
 	    public String add(@RequestBody Alimentation alimentation){
 	    
