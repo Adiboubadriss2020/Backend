@@ -64,6 +64,7 @@ public class EmployeeControllers {
 	    }
 		 
 		// delete employee rest api
+		@CrossOrigin(origins= "*")
 		@DeleteMapping("/delete/{id}")
 		public String deleted(@PathVariable(value = "id") Long id) {
 			employeeService.delete(id);
